@@ -2,6 +2,10 @@
 
 > Simple tooltip using an html attribute for the content
 
+## Install
+
+	$ npm install cssrecipes-tooltip
+
 ## Usage
 
 Example:
