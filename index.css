@@ -11,6 +11,8 @@
  * <div class="rcp-Tooltip rcp-Tooltip--bottom rcp-Tooltip--visible" data-rcp-tooltip="Tooltip">visible on bottom</div>
  * <div class="rcp-Tooltip rcp-Tooltip--left" data-rcp-tooltip="Tooltip">Hover me (left)</div>
  * <div class="rcp-Tooltip rcp-Tooltip--left rcp-Tooltip--visible" data-rcp-tooltip="Tooltip">visible on left</div>
+ * <div class="rcp-Tooltip rcp-Tooltip--top rcp-Tooltip--visible" data-rcp-tooltip="Lot's of content in the tooltip (auto wrap)">auto wrap</div>
+ * <div class="rcp-Tooltip rcp-Tooltip--top rcp-Tooltip--nowrap rcp-Tooltip--visible" data-rcp-tooltip="Lot's of content in the tooltip (nowrap)">nowrap</div>
  */
 :root {
   --rcp-Tooltip-zIndex: 1000;
@@ -70,6 +72,10 @@
 
     border-radius: 2px;
   }
+
+    .rcp-Tooltip--nowrap::after {
+      white-space: nowrap;
+    }
 
   /**
    * Positions
