@@ -29,6 +29,12 @@ Example:
 
 ##### `.rcp-Tooltip--visible`
 
+Force visibility (no need to hover).
+
+##### `.rcp-Tooltip--nowrap`
+
+Add a avoid whitespace to wrap content (force content to be on one line).
+
 ## Availables custom properties
 
 ```css
