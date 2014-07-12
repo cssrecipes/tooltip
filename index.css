@@ -16,8 +16,8 @@
   --rcp-Tooltip-zIndex: 1000;
   --rcp-Tooltip-backgroundColor: #383838;
   --rcp-Tooltip-margin: .5rem;
-  
-  --rcp-Tooltip-arrow-size: .5rem;
+
+  --rcp-Tooltip-arrow-size: 6px;
 }
 
 .rcp-Tooltip {
