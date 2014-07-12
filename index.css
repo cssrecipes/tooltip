@@ -18,6 +18,8 @@
   --rcp-Tooltip-margin: .5rem;
 
   --rcp-Tooltip-arrow-size: 6px;
+
+  --rcp-Tooltip-arrow-margin: calc(var(--rcp-Tooltip-arrow-size) * -2);
 }
 
 .rcp-Tooltip {
@@ -94,7 +96,7 @@
 
     .rcp-Tooltip--top::before {
       border-top-color: var(--rcp-Tooltip-backgroundColor);
-      margin-bottom: calc(var(--rcp-Tooltip-arrow-size) * -2);
+      margin-bottom: var(--rcp-Tooltip-arrow-margin);
     }
 
     /**
@@ -117,7 +119,7 @@
     }
 
     .rcp-Tooltip--bottom::before {
-      margin-top: calc(var(--rcp-Tooltip-arrow-size) * -2);
+      margin-top: var(--rcp-Tooltip-arrow-margin);
       border-bottom-color: var(--rcp-Tooltip-backgroundColor);
     }
 
@@ -141,7 +143,7 @@
     }
 
     .rcp-Tooltip--left::before {
-      margin-right: calc(var(--rcp-Tooltip-arrow-size) * -2);
+      margin-right: var(--rcp-Tooltip-arrow-margin);
       border-left-color: var(--rcp-Tooltip-backgroundColor);
     }
 
@@ -165,6 +167,6 @@
     }
 
     .rcp-Tooltip--right::before {
-      margin-left: calc(var(--rcp-Tooltip-arrow-size) * -2);
+      margin-left: var(--rcp-Tooltip-arrow-margin);
       border-right-color: var(--rcp-Tooltip-backgroundColor);
     }
