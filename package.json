@@ -1,7 +1,7 @@
 {
   "name": "cssrecipes-tooltip",
   "description": "Simple tooltip using an html attribute for the content",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "main": "index.css",
   "style": "index.css",
   "files": [
