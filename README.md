@@ -56,14 +56,14 @@ If custom properties are not enough, you can obviously override default rules. O
 It's easy to add a `success` or `error` state.
 
 ```css
-.rcp-Tooltip--STATE::after {
+.rcp-Tooltip--STATE::before {
 	background-color: var(--rcp-Tooltip--STATE-color);
 	text-shadow: 0 -1px 0 color(var(--rcp-Tooltip--STATE-color) blackness(90%));
 }
-	.rcp-Tooltip--STATE.rcp-Tooltip--top::before { border-top-color: var(--rcp-Tooltip--STATE-color) }
-	.rcp-Tooltip--STATE.rcp-Tooltip--bottom::before { border-bottom-color: var(--rcp-Tooltip--STATE-color) }
-	.rcp-Tooltip--STATE.rcp-Tooltip--left::before { border-left-color: var(--rcp-Tooltip--STATE-color) }
-	.rcp-Tooltip--STATE.rcp-Tooltip--right::before { border-right-color: var(--rcp-Tooltip--STATE-color) }
+	.rcp-Tooltip--STATE.rcp-Tooltip--top::after { border-top-color: var(--rcp-Tooltip--STATE-color) }
+	.rcp-Tooltip--STATE.rcp-Tooltip--bottom::after { border-bottom-color: var(--rcp-Tooltip--STATE-color) }
+	.rcp-Tooltip--STATE.rcp-Tooltip--left::after { border-left-color: var(--rcp-Tooltip--STATE-color) }
+	.rcp-Tooltip--STATE.rcp-Tooltip--right::after { border-right-color: var(--rcp-Tooltip--STATE-color) }
 ```
 
 ## Testing

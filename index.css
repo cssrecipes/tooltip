@@ -19,14 +19,13 @@
   --rcp-Tooltip-backgroundColor: #383838;
   --rcp-Tooltip-margin: .5rem;
 
-  --rcp-Tooltip-arrow-size: 6px;
-
-  --rcp-Tooltip-arrow-margin: calc(var(--rcp-Tooltip-arrow-size) * -2);
+  --rcp-Tooltip-arrow-size: .375rem;
 }
 
 .rcp-Tooltip {
   position: relative;
   display: inline-block;
+  transform: translate3d(0, 0, 0);
 }
 
 .rcp-Tooltip::before,
@@ -37,7 +36,6 @@
   position: absolute;
   opacity: 0;
   transition: .3s ease;
-  transform: translate3d(0, 0, 0);
 }
 
   .rcp-Tooltip--visible::before,
@@ -50,19 +48,13 @@
     opacity: 1;
   }
 
+  /* tooltip content */
   .rcp-Tooltip::before {
-    content: "";
-    z-index: calc(var(--rcp-Tooltip-zIndex) + 1);
-    position: absolute;
-    border: var(--rcp-Tooltip-arrow-size) solid transparent;
-    background: transparent;
-  }
-
-  .rcp-Tooltip::after {
     content: attr(data-rcp-tooltip);
 
     font-size: .83333rem;
     line-height: 1.5625rem;
+    margin: 0;
     padding: 0 .5rem;
 
     color: #fff;
@@ -73,9 +65,18 @@
     border-radius: 2px;
   }
 
-    .rcp-Tooltip--nowrap::after {
+    .rcp-Tooltip--nowrap::before {
       white-space: nowrap;
     }
+
+  /* tooltip arrow */
+  .rcp-Tooltip::after {
+    content: "";
+    z-index: calc(var(--rcp-Tooltip-zIndex) + 1);
+    position: absolute;
+    border: var(--rcp-Tooltip-arrow-size) solid transparent;
+    background: transparent;
+  }
 
   /**
    * Positions
@@ -91,19 +92,24 @@
       transform: translateX(-50%);
     }
 
-    .rcp-Tooltip--visible.rcp-Tooltip--top::before,
-    .rcp-Tooltip--visible.rcp-Tooltip--top::after,
-    .rcp-Tooltip--top:hover::after,
-    .rcp-Tooltip--top:hover::before,
-    .rcp-Tooltip--top:focus::after,
-    .rcp-Tooltip--top:focus::before {
-      transform: translateX(-50%) translateY(-var(--rcp-Tooltip-margin));
+    .rcp-Tooltip--top::before {}
+
+      .rcp-Tooltip--visible.rcp-Tooltip--top::before,
+      .rcp-Tooltip--top:hover::before,
+      .rcp-Tooltip--top:focus::before {
+        margin-bottom: calc(var(--rcp-Tooltip-arrow-size) * 1 + var(--rcp-Tooltip-margin));
+      }
+
+    .rcp-Tooltip--top::after {
+      margin-bottom: calc(var(--rcp-Tooltip-arrow-size) * -2);
+      border-top-color: var(--rcp-Tooltip-backgroundColor);
     }
 
-    .rcp-Tooltip--top::before {
-      border-top-color: var(--rcp-Tooltip-backgroundColor);
-      margin-bottom: var(--rcp-Tooltip-arrow-margin);
-    }
+      .rcp-Tooltip--visible.rcp-Tooltip--top::after,
+      .rcp-Tooltip--top:hover::after,
+      .rcp-Tooltip--top:focus::after {
+        margin-bottom: calc(var(--rcp-Tooltip-arrow-size) * -1 + var(--rcp-Tooltip-margin));
+      }
 
     /**
      * Bottom
@@ -115,19 +121,24 @@
       transform: translateX(-50%);
     }
 
-    .rcp-Tooltip--visible.rcp-Tooltip--bottom::before,
-    .rcp-Tooltip--visible.rcp-Tooltip--bottom::after,
-    .rcp-Tooltip--bottom:hover::after,
-    .rcp-Tooltip--bottom:hover::before,
-    .rcp-Tooltip--bottom:focus::after,
-    .rcp-Tooltip--bottom:focus::before {
-      transform: translateX(-50%) translateY(var(--rcp-Tooltip-margin));
-    }
+    .rcp-Tooltip--bottom::before {}
 
-    .rcp-Tooltip--bottom::before {
-      margin-top: var(--rcp-Tooltip-arrow-margin);
+      .rcp-Tooltip--visible.rcp-Tooltip--bottom::before,
+      .rcp-Tooltip--bottom:hover::before,
+      .rcp-Tooltip--bottom:focus::before {
+        margin-top: calc(var(--rcp-Tooltip-arrow-size) * 1 + var(--rcp-Tooltip-margin));
+      }
+
+    .rcp-Tooltip--bottom::after {
+      margin-top: calc(var(--rcp-Tooltip-arrow-size) * -2);
       border-bottom-color: var(--rcp-Tooltip-backgroundColor);
     }
+
+      .rcp-Tooltip--visible.rcp-Tooltip--bottom::after,
+      .rcp-Tooltip--bottom:hover::after,
+      .rcp-Tooltip--bottom:focus::after {
+        margin-top: calc(var(--rcp-Tooltip-arrow-size) * -1 + var(--rcp-Tooltip-margin))
+      }
 
     /**
      * Left
@@ -139,19 +150,24 @@
       transform: translateY(-50%);
     }
 
-    .rcp-Tooltip--visible.rcp-Tooltip--left::before,
-    .rcp-Tooltip--visible.rcp-Tooltip--left::after,
-    .rcp-Tooltip--left:hover::after,
-    .rcp-Tooltip--left:hover::before,
-    .rcp-Tooltip--left:focus::after,
-    .rcp-Tooltip--left:focus::before {
-      transform: translateX(-var(--rcp-Tooltip-margin)) translateY(-50%);
-    }
+    .rcp-Tooltip--left::before {}
 
-    .rcp-Tooltip--left::before {
-      margin-right: var(--rcp-Tooltip-arrow-margin);
+      .rcp-Tooltip--visible.rcp-Tooltip--left::before,
+      .rcp-Tooltip--left:hover::before,
+      .rcp-Tooltip--left:focus::before {
+        margin-right: calc(var(--rcp-Tooltip-arrow-size) * 1 + var(--rcp-Tooltip-margin));
+      }
+
+    .rcp-Tooltip--left::after {
+      margin-right: calc(var(--rcp-Tooltip-arrow-size) * -2);
       border-left-color: var(--rcp-Tooltip-backgroundColor);
     }
+
+      .rcp-Tooltip--visible.rcp-Tooltip--left::after,
+      .rcp-Tooltip--left:hover::after,
+      .rcp-Tooltip--left:focus::after {
+        margin-right: calc(var(--rcp-Tooltip-arrow-size) * -1 + var(--rcp-Tooltip-margin))
+      }
 
     /**
      * Right
@@ -163,16 +179,21 @@
       transform: translateY(-50%);
     }
 
-    .rcp-Tooltip--visible.rcp-Tooltip--right::before,
-    .rcp-Tooltip--visible.rcp-Tooltip--right::after,
-    .rcp-Tooltip--right:hover::after,
-    .rcp-Tooltip--right:hover::before,
-    .rcp-Tooltip--right:focus::after,
-    .rcp-Tooltip--right:focus::before {
-      transform: translateX(var(--rcp-Tooltip-margin)) translateY(-50%);
-    }
+    .rcp-Tooltip--right::before {}
 
-    .rcp-Tooltip--right::before {
-      margin-left: var(--rcp-Tooltip-arrow-margin);
+      .rcp-Tooltip--visible.rcp-Tooltip--right::before,
+      .rcp-Tooltip--right:hover::before,
+      .rcp-Tooltip--right:focus::before {
+        margin-left: calc(var(--rcp-Tooltip-arrow-size) * 1 + var(--rcp-Tooltip-margin));
+      }
+
+    .rcp-Tooltip--right::after {
+      margin-left: calc(var(--rcp-Tooltip-arrow-size) * -2);
       border-right-color: var(--rcp-Tooltip-backgroundColor);
     }
+
+      .rcp-Tooltip--visible.rcp-Tooltip--right::after,
+      .rcp-Tooltip--right:hover::after,
+      .rcp-Tooltip--right:focus::after {
+        margin-left: calc(var(--rcp-Tooltip-arrow-size) * -1 + var(--rcp-Tooltip-margin))
+      }
