@@ -66,6 +66,9 @@ It's easy to add a `success` or `error` state.
 	.rcp-Tooltip--STATE.rcp-Tooltip--right::after { border-right-color: var(--rcp-Tooltip--STATE-color) }
 ```
 
+
+---
+
 ## Testing
 
 _Requires [nodejs](http://nodejs.org)_
@@ -80,6 +83,16 @@ To generate the testing build.
 
 Basic visual tests are in `test/index.html`.
 
+
+## Contributing
+
+Work on a branch, install dev-dependencies, respect coding style & run tests before submitting a bug fix or a feature.
+
+    $ git clone https://github.com/cssrecipes/tooltip.git
+    $ git checkout -b patch-1
+    $ npm install
+    $ npm test
+
 ## [Changelog](CHANGELOG.md)
 
-## [License](LICENSE-MIT)
+## [License](LICENSE)

@@ -1,11 +1,28 @@
 {
   "name": "cssrecipes-tooltip",
-  "description": "Simple tooltip using an html attribute for the content",
   "version": "0.3.0",
+  "description": "Simple tooltip using an html attribute for the content",
+  "keywords": [
+    "style",
+    "css",
+    "cssrecipes",
+    "tooltip"
+  ],
+  "author": "Maxime Thirouin",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cssrecipes/tooltip.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cssrecipes/tooltip/issues"
+  },
+  "homepage": "https://github.com/cssrecipes/tooltip",
   "main": "index.css",
   "style": "index.css",
   "files": [
-    "lib",
+    "CHANGELOG.md",
+    "LICENSE",
     "index.css"
   ],
   "devDependencies": {
@@ -18,21 +35,5 @@
     "preprocess-test": "cssnext test/test.css build/test.css",
     "build-test": "npm run setup && npm run preprocess-test",
     "test": "npm run build-test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/cssrecipes/tooltip.git"
-  },
-  "keywords": [
-    "browser",
-    "style",
-    "css",
-    "css-components",
-    "css-recipes",
-    "cssrecipes",
-    "recipes",
-    "tooltip"
-  ],
-  "author": "MoOx <m@moox.io>",
-  "license": "MIT"
+  }
 }
