@@ -4,46 +4,53 @@
 
 ## Install
 
-	$ npm install cssrecipes-tooltip
+```sh
+$ npm install cssrecipes-tooltip
+```
 
 ## Usage
 
 Example:
 
 ```html
-<span class="rcp-Tooltip rcp-Tooltip--bottom" data-rcp-tooltip="I'm the tooltip body">Hover me to see the tooltip !</span>
+<span class="cssr-Tooltip cssr-Tooltip--bottom" data-cssr-tooltip="I'm the tooltip body">Hover me to see the tooltip !</span>
 ```
 
 ## Available classes
 
-### `.rcp-Tooltip`
+### `.cssr-Tooltip`
 
 #### Position modifiers
 
-##### `.rcp-Tooltip--top`
-##### `.rcp-Tooltip--bottom`
-##### `.rcp-Tooltip--left`
-##### `.rcp-Tooltip--right`
+##### `.cssr-Tooltip--top`
+##### `.cssr-Tooltip--bottom`
+##### `.cssr-Tooltip--left`
+##### `.cssr-Tooltip--right`
 
 #### Visibility modifier
 
-##### `.rcp-Tooltip--visible`
+##### `.cssr-Tooltip--visible`
 
 Force visibility (no need to hover).
 
-##### `.rcp-Tooltip--nowrap`
+##### `.cssr-Tooltip--nowrap`
 
 Add a avoid whitespace to wrap content (force content to be on one line).
+
+##### `.cssr-Tooltip--centerText`
+
+Add `text-align: center` on the tooltip content.
+
 
 ## Availables custom properties
 
 ```css
 :root {
-	--rcp-Tooltip-zIndex: 1000;
-	--rcp-Tooltip-backgroundColor: #383838;
-	--rcp-Tooltip-margin: .5rem;
+	--cssr-Tooltip-zIndex: 1000;
+	--cssr-Tooltip-backgroundColor: #383838;
+	--cssr-Tooltip-margin: .5rem;
 
-	--rcp-Tooltip-arrow-size: .5rem;
+	--cssr-Tooltip-arrow-size: .5rem;
 }
 ```
 
@@ -56,42 +63,44 @@ If custom properties are not enough, you can obviously override default rules. O
 It's easy to add a `success` or `error` state.
 
 ```css
-.rcp-Tooltip--STATE::before {
-	background-color: var(--rcp-Tooltip--STATE-color);
-	text-shadow: 0 -1px 0 color(var(--rcp-Tooltip--STATE-color) blackness(90%));
+.cssr-Tooltip--STATE::before {
+	background-color: var(--cssr-Tooltip--STATE-color);
+	text-shadow: 0 -1px 0 color(var(--cssr-Tooltip--STATE-color) blackness(90%));
 }
-	.rcp-Tooltip--STATE.rcp-Tooltip--top::after { border-top-color: var(--rcp-Tooltip--STATE-color) }
-	.rcp-Tooltip--STATE.rcp-Tooltip--bottom::after { border-bottom-color: var(--rcp-Tooltip--STATE-color) }
-	.rcp-Tooltip--STATE.rcp-Tooltip--left::after { border-left-color: var(--rcp-Tooltip--STATE-color) }
-	.rcp-Tooltip--STATE.rcp-Tooltip--right::after { border-right-color: var(--rcp-Tooltip--STATE-color) }
+	.cssr-Tooltip--STATE.cssr-Tooltip--top::after { border-top-color: var(--cssr-Tooltip--STATE-color) }
+	.cssr-Tooltip--STATE.cssr-Tooltip--bottom::after { border-bottom-color: var(--cssr-Tooltip--STATE-color) }
+	.cssr-Tooltip--STATE.cssr-Tooltip--left::after { border-left-color: var(--cssr-Tooltip--STATE-color) }
+	.cssr-Tooltip--STATE.cssr-Tooltip--right::after { border-right-color: var(--cssr-Tooltip--STATE-color) }
 ```
-
 
 ---
 
 ## Testing
 
-_Requires [nodejs](http://nodejs.org)_
-
 To generate a build:
 
-	npm run build
+```sh
+$ npm run build
+```
 
 To generate the testing build.
 
-	$ npm run build-test
+```sh
+$ npm run build-test
+```
 
 Basic visual tests are in `test/index.html`.
-
 
 ## Contributing
 
 Work on a branch, install dev-dependencies, respect coding style & run tests before submitting a bug fix or a feature.
 
-    $ git clone https://github.com/cssrecipes/tooltip.git
-    $ git checkout -b patch-1
-    $ npm install
-    $ npm test
+```sh
+$ git clone https://github.com/cssrecipes/tooltip.git
+$ git checkout -b patch-1
+$ npm install
+$ npm test
+```
 
 ## [Changelog](CHANGELOG.md)
 
