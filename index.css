@@ -1,37 +1,37 @@
 /**
- * @name cssr-Tooltip
- * @description Tooltip based on an html attribute (data-cssr-tooltip)
+ * @name r-Tooltip
+ * @description Tooltip based on an html attribute (data-r-tooltip)
  * 
  * @markup
- * <div class="cssr-Tooltip" data-cssr-tooltip="Tooltip">Hover me</div>
- * <div class="cssr-Tooltip cssr-Tooltip--top" data-cssr-tooltip="Tooltip">Hover me (top)</div>
- * <div class="cssr-Tooltip cssr-Tooltip--top cssr-Tooltip--visible" data-cssr-tooltip="Tooltip">visible on top</div>
- * <div class="cssr-Tooltip cssr-Tooltip--right" data-cssr-tooltip="Tooltip">Hover me (right)</div>
- * <div class="cssr-Tooltip cssr-Tooltip--right cssr-Tooltip--visible" data-cssr-tooltip="Tooltip">visible on right</div>
- * <div class="cssr-Tooltip cssr-Tooltip--bottom" data-cssr-tooltip="Tooltip">Hover me (bottom)</div>
- * <div class="cssr-Tooltip cssr-Tooltip--bottom cssr-Tooltip--visible" data-cssr-tooltip="Tooltip">visible on bottom</div>
- * <div class="cssr-Tooltip cssr-Tooltip--left" data-cssr-tooltip="Tooltip">Hover me (left)</div>
- * <div class="cssr-Tooltip cssr-Tooltip--left cssr-Tooltip--visible" data-cssr-tooltip="Tooltip">visible on left</div>
- * <div class="cssr-Tooltip cssr-Tooltip--top cssr-Tooltip--visible" data-cssr-tooltip="Lot's of content in the tooltip (auto wrap)">auto wrap</div>
- * <div class="cssr-Tooltip cssr-Tooltip--top cssr-Tooltip--nowrap cssr-Tooltip--visible" data-cssr-tooltip="Lot's of content in the tooltip (nowrap)">nowrap</div>
+ * <div class="r-Tooltip" data-r-tooltip="Tooltip">Hover me</div>
+ * <div class="r-Tooltip r-Tooltip--top" data-r-tooltip="Tooltip">Hover me (top)</div>
+ * <div class="r-Tooltip r-Tooltip--top r-Tooltip--visible" data-r-tooltip="Tooltip">visible on top</div>
+ * <div class="r-Tooltip r-Tooltip--right" data-r-tooltip="Tooltip">Hover me (right)</div>
+ * <div class="r-Tooltip r-Tooltip--right r-Tooltip--visible" data-r-tooltip="Tooltip">visible on right</div>
+ * <div class="r-Tooltip r-Tooltip--bottom" data-r-tooltip="Tooltip">Hover me (bottom)</div>
+ * <div class="r-Tooltip r-Tooltip--bottom r-Tooltip--visible" data-r-tooltip="Tooltip">visible on bottom</div>
+ * <div class="r-Tooltip r-Tooltip--left" data-r-tooltip="Tooltip">Hover me (left)</div>
+ * <div class="r-Tooltip r-Tooltip--left r-Tooltip--visible" data-r-tooltip="Tooltip">visible on left</div>
+ * <div class="r-Tooltip r-Tooltip--top r-Tooltip--visible" data-r-tooltip="Lot's of content in the tooltip (auto wrap)">auto wrap</div>
+ * <div class="r-Tooltip r-Tooltip--top r-Tooltip--nowrap r-Tooltip--visible" data-r-tooltip="Lot's of content in the tooltip (nowrap)">nowrap</div>
  */
 :root {
-  --cssr-Tooltip-zIndex: 1000;
-  --cssr-Tooltip-backgroundColor: #383838;
-  --cssr-Tooltip-margin: .5rem;
+  --r-Tooltip-zIndex: 1000;
+  --r-Tooltip-backgroundColor: #383838;
+  --r-Tooltip-margin: .5rem;
 
-  --cssr-Tooltip-arrow-size: .375rem;
+  --r-Tooltip-arrow-size: .375rem;
 }
 
-.cssr-Tooltip {
+.r-Tooltip {
   position: relative;
   display: inline-block;
   transform: translate3d(0, 0, 0);
 }
 
-.cssr-Tooltip::before,
-.cssr-Tooltip::after {
-  z-index: var(--cssr-Tooltip-zIndex);
+.r-Tooltip::before,
+.r-Tooltip::after {
+  z-index: var(--r-Tooltip-zIndex);
   pointer-events: none;
   visibility: hidden;
   position: absolute;
@@ -39,19 +39,19 @@
   transition: .3s ease;
 }
 
-  .cssr-Tooltip--visible::before,
-  .cssr-Tooltip--visible::after,
-  .cssr-Tooltip:hover::before,
-  .cssr-Tooltip:hover::after,
-  .cssr-Tooltip:focus::before,
-  .cssr-Tooltip:focus::after {
+  .r-Tooltip--visible::before,
+  .r-Tooltip--visible::after,
+  .r-Tooltip:hover::before,
+  .r-Tooltip:hover::after,
+  .r-Tooltip:focus::before,
+  .r-Tooltip:focus::after {
     visibility: visible;
     opacity: 1;
   }
 
   /* tooltip content */
-  .cssr-Tooltip::before {
-    content: attr(data-cssr-tooltip);
+  .r-Tooltip::before {
+    content: attr(data-r-tooltip);
 
     font-size: .83333rem;
     line-height: 1.5625rem;
@@ -59,22 +59,22 @@
     padding: 0 .5rem;
 
     color: #fff;
-    background: var(--cssr-Tooltip-backgroundColor);
+    background: var(--r-Tooltip-backgroundColor);
     text-shadow: 0 -1px 0 #000;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, .3);
 
     border-radius: 2px;
   }
 
-    .cssr-Tooltip--nowrap::before { white-space: nowrap; }
-    .cssr-Tooltip--centerText::before { text-align: center; }
+    .r-Tooltip--nowrap::before { white-space: nowrap; }
+    .r-Tooltip--centerText::before { text-align: center; }
 
   /* tooltip arrow */
-  .cssr-Tooltip::after {
+  .r-Tooltip::after {
     content: "";
-    z-index: calc(var(--cssr-Tooltip-zIndex) + 1);
+    z-index: calc(var(--r-Tooltip-zIndex) + 1);
     position: absolute;
-    border: var(--cssr-Tooltip-arrow-size) solid transparent;
+    border: var(--r-Tooltip-arrow-size) solid transparent;
     background: transparent;
   }
 
@@ -85,115 +85,115 @@
     /**
      * Top
      */
-    .cssr-Tooltip--top::before,
-    .cssr-Tooltip--top::after {
+    .r-Tooltip--top::before,
+    .r-Tooltip--top::after {
       bottom: 100%;
       left: 50%;
       transform: translateX(-50%);
     }
 
-    .cssr-Tooltip--top::before {}
+    .r-Tooltip--top::before {}
 
-      .cssr-Tooltip--visible.cssr-Tooltip--top::before,
-      .cssr-Tooltip--top:hover::before,
-      .cssr-Tooltip--top:focus::before {
-        margin-bottom: calc(var(--cssr-Tooltip-arrow-size) * 1 + var(--cssr-Tooltip-margin));
+      .r-Tooltip--visible.r-Tooltip--top::before,
+      .r-Tooltip--top:hover::before,
+      .r-Tooltip--top:focus::before {
+        margin-bottom: calc(var(--r-Tooltip-arrow-size) * 1 + var(--r-Tooltip-margin));
       }
 
-    .cssr-Tooltip--top::after {
-      margin-bottom: calc(var(--cssr-Tooltip-arrow-size) * -2);
-      border-top-color: var(--cssr-Tooltip-backgroundColor);
+    .r-Tooltip--top::after {
+      margin-bottom: calc(var(--r-Tooltip-arrow-size) * -2);
+      border-top-color: var(--r-Tooltip-backgroundColor);
     }
 
-      .cssr-Tooltip--visible.cssr-Tooltip--top::after,
-      .cssr-Tooltip--top:hover::after,
-      .cssr-Tooltip--top:focus::after {
-        margin-bottom: calc(var(--cssr-Tooltip-arrow-size) * -1 + var(--cssr-Tooltip-margin));
+      .r-Tooltip--visible.r-Tooltip--top::after,
+      .r-Tooltip--top:hover::after,
+      .r-Tooltip--top:focus::after {
+        margin-bottom: calc(var(--r-Tooltip-arrow-size) * -1 + var(--r-Tooltip-margin));
       }
 
     /**
      * Bottom
      */
-    .cssr-Tooltip--bottom::before,
-    .cssr-Tooltip--bottom::after {
+    .r-Tooltip--bottom::before,
+    .r-Tooltip--bottom::after {
       top: 100%;
       left: 50%;
       transform: translateX(-50%);
     }
 
-    .cssr-Tooltip--bottom::before {}
+    .r-Tooltip--bottom::before {}
 
-      .cssr-Tooltip--visible.cssr-Tooltip--bottom::before,
-      .cssr-Tooltip--bottom:hover::before,
-      .cssr-Tooltip--bottom:focus::before {
-        margin-top: calc(var(--cssr-Tooltip-arrow-size) * 1 + var(--cssr-Tooltip-margin));
+      .r-Tooltip--visible.r-Tooltip--bottom::before,
+      .r-Tooltip--bottom:hover::before,
+      .r-Tooltip--bottom:focus::before {
+        margin-top: calc(var(--r-Tooltip-arrow-size) * 1 + var(--r-Tooltip-margin));
       }
 
-    .cssr-Tooltip--bottom::after {
-      margin-top: calc(var(--cssr-Tooltip-arrow-size) * -2);
-      border-bottom-color: var(--cssr-Tooltip-backgroundColor);
+    .r-Tooltip--bottom::after {
+      margin-top: calc(var(--r-Tooltip-arrow-size) * -2);
+      border-bottom-color: var(--r-Tooltip-backgroundColor);
     }
 
-      .cssr-Tooltip--visible.cssr-Tooltip--bottom::after,
-      .cssr-Tooltip--bottom:hover::after,
-      .cssr-Tooltip--bottom:focus::after {
-        margin-top: calc(var(--cssr-Tooltip-arrow-size) * -1 + var(--cssr-Tooltip-margin))
+      .r-Tooltip--visible.r-Tooltip--bottom::after,
+      .r-Tooltip--bottom:hover::after,
+      .r-Tooltip--bottom:focus::after {
+        margin-top: calc(var(--r-Tooltip-arrow-size) * -1 + var(--r-Tooltip-margin))
       }
 
     /**
      * Left
      */
-    .cssr-Tooltip--left::before,
-    .cssr-Tooltip--left::after {
+    .r-Tooltip--left::before,
+    .r-Tooltip--left::after {
       right: 100%;
       top: 50%;
       transform: translateY(-50%);
     }
 
-    .cssr-Tooltip--left::before {}
+    .r-Tooltip--left::before {}
 
-      .cssr-Tooltip--visible.cssr-Tooltip--left::before,
-      .cssr-Tooltip--left:hover::before,
-      .cssr-Tooltip--left:focus::before {
-        margin-right: calc(var(--cssr-Tooltip-arrow-size) * 1 + var(--cssr-Tooltip-margin));
+      .r-Tooltip--visible.r-Tooltip--left::before,
+      .r-Tooltip--left:hover::before,
+      .r-Tooltip--left:focus::before {
+        margin-right: calc(var(--r-Tooltip-arrow-size) * 1 + var(--r-Tooltip-margin));
       }
 
-    .cssr-Tooltip--left::after {
-      margin-right: calc(var(--cssr-Tooltip-arrow-size) * -2);
-      border-left-color: var(--cssr-Tooltip-backgroundColor);
+    .r-Tooltip--left::after {
+      margin-right: calc(var(--r-Tooltip-arrow-size) * -2);
+      border-left-color: var(--r-Tooltip-backgroundColor);
     }
 
-      .cssr-Tooltip--visible.cssr-Tooltip--left::after,
-      .cssr-Tooltip--left:hover::after,
-      .cssr-Tooltip--left:focus::after {
-        margin-right: calc(var(--cssr-Tooltip-arrow-size) * -1 + var(--cssr-Tooltip-margin))
+      .r-Tooltip--visible.r-Tooltip--left::after,
+      .r-Tooltip--left:hover::after,
+      .r-Tooltip--left:focus::after {
+        margin-right: calc(var(--r-Tooltip-arrow-size) * -1 + var(--r-Tooltip-margin))
       }
 
     /**
      * Right
      */
-    .cssr-Tooltip--right::before,
-    .cssr-Tooltip--right::after {
+    .r-Tooltip--right::before,
+    .r-Tooltip--right::after {
       left: 100%;
       top: 50%;
       transform: translateY(-50%);
     }
 
-    .cssr-Tooltip--right::before {}
+    .r-Tooltip--right::before {}
 
-      .cssr-Tooltip--visible.cssr-Tooltip--right::before,
-      .cssr-Tooltip--right:hover::before,
-      .cssr-Tooltip--right:focus::before {
-        margin-left: calc(var(--cssr-Tooltip-arrow-size) * 1 + var(--cssr-Tooltip-margin));
+      .r-Tooltip--visible.r-Tooltip--right::before,
+      .r-Tooltip--right:hover::before,
+      .r-Tooltip--right:focus::before {
+        margin-left: calc(var(--r-Tooltip-arrow-size) * 1 + var(--r-Tooltip-margin));
       }
 
-    .cssr-Tooltip--right::after {
-      margin-left: calc(var(--cssr-Tooltip-arrow-size) * -2);
-      border-right-color: var(--cssr-Tooltip-backgroundColor);
+    .r-Tooltip--right::after {
+      margin-left: calc(var(--r-Tooltip-arrow-size) * -2);
+      border-right-color: var(--r-Tooltip-backgroundColor);
     }
 
-      .cssr-Tooltip--visible.cssr-Tooltip--right::after,
-      .cssr-Tooltip--right:hover::after,
-      .cssr-Tooltip--right:focus::after {
-        margin-left: calc(var(--cssr-Tooltip-arrow-size) * -1 + var(--cssr-Tooltip-margin))
+      .r-Tooltip--visible.r-Tooltip--right::after,
+      .r-Tooltip--right:hover::after,
+      .r-Tooltip--right:focus::after {
+        margin-left: calc(var(--r-Tooltip-arrow-size) * -1 + var(--r-Tooltip-margin))
       }

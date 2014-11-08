@@ -13,31 +13,31 @@ $ npm install cssrecipes-tooltip
 Example:
 
 ```html
-<span class="cssr-Tooltip cssr-Tooltip--bottom" data-cssr-tooltip="I'm the tooltip body">Hover me to see the tooltip !</span>
+<span class="r-Tooltip r-Tooltip--bottom" data-r-tooltip="I'm the tooltip body">Hover me to see the tooltip !</span>
 ```
 
 ## Available classes
 
-### `.cssr-Tooltip`
+### `.r-Tooltip`
 
 #### Position modifiers
 
-##### `.cssr-Tooltip--top`
-##### `.cssr-Tooltip--bottom`
-##### `.cssr-Tooltip--left`
-##### `.cssr-Tooltip--right`
+##### `.r-Tooltip--top`
+##### `.r-Tooltip--bottom`
+##### `.r-Tooltip--left`
+##### `.r-Tooltip--right`
 
 #### Visibility modifier
 
-##### `.cssr-Tooltip--visible`
+##### `.r-Tooltip--visible`
 
 Force visibility (no need to hover).
 
-##### `.cssr-Tooltip--nowrap`
+##### `.r-Tooltip--nowrap`
 
 Add a avoid whitespace to wrap content (force content to be on one line).
 
-##### `.cssr-Tooltip--centerText`
+##### `.r-Tooltip--centerText`
 
 Add `text-align: center` on the tooltip content.
 
@@ -46,11 +46,11 @@ Add `text-align: center` on the tooltip content.
 
 ```css
 :root {
-	--cssr-Tooltip-zIndex: 1000;
-	--cssr-Tooltip-backgroundColor: #383838;
-	--cssr-Tooltip-margin: .5rem;
+	--r-Tooltip-zIndex: 1000;
+	--r-Tooltip-backgroundColor: #383838;
+	--r-Tooltip-margin: .5rem;
 
-	--cssr-Tooltip-arrow-size: .5rem;
+	--r-Tooltip-arrow-size: .5rem;
 }
 ```
 
@@ -63,14 +63,14 @@ If custom properties are not enough, you can obviously override default rules. O
 It's easy to add a `success` or `error` state.
 
 ```css
-.cssr-Tooltip--STATE::before {
-	background-color: var(--cssr-Tooltip--STATE-color);
-	text-shadow: 0 -1px 0 color(var(--cssr-Tooltip--STATE-color) blackness(90%));
+.r-Tooltip--STATE::before {
+	background-color: var(--r-Tooltip--STATE-color);
+	text-shadow: 0 -1px 0 color(var(--r-Tooltip--STATE-color) blackness(90%));
 }
-	.cssr-Tooltip--STATE.cssr-Tooltip--top::after { border-top-color: var(--cssr-Tooltip--STATE-color) }
-	.cssr-Tooltip--STATE.cssr-Tooltip--bottom::after { border-bottom-color: var(--cssr-Tooltip--STATE-color) }
-	.cssr-Tooltip--STATE.cssr-Tooltip--left::after { border-left-color: var(--cssr-Tooltip--STATE-color) }
-	.cssr-Tooltip--STATE.cssr-Tooltip--right::after { border-right-color: var(--cssr-Tooltip--STATE-color) }
+	.r-Tooltip--STATE.r-Tooltip--top::after { border-top-color: var(--r-Tooltip--STATE-color) }
+	.r-Tooltip--STATE.r-Tooltip--bottom::after { border-bottom-color: var(--r-Tooltip--STATE-color) }
+	.r-Tooltip--STATE.r-Tooltip--left::after { border-left-color: var(--r-Tooltip--STATE-color) }
+	.r-Tooltip--STATE.r-Tooltip--right::after { border-right-color: var(--r-Tooltip--STATE-color) }
 ```
 
 ---
